@@ -135,7 +135,11 @@ private fun setEventDayColors(day: Calendar, dayLabel: TextView, calendarPropert
 }
 
 private fun setHighlightedDayColors(dayLabel: TextView, calendarProperties: CalendarProperties) {
-    dayLabel.setDayColors(textColor = calendarProperties.highlightedDaysLabelsColor)
+    dayLabel.setDayColors(
+        textColor = calendarProperties.highlightedDaysLabelsColor,
+        backgroundRes = calendarProperties.selectionBackground
+    )
+    tintBackground(dayLabel, calendarProperties.selectionColor)
 }
 
 private fun setNormalDayColors(calendar: Calendar, dayLabel: TextView, calendarProperties: CalendarProperties) {
